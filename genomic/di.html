@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Predictor</title>
+    <link rel="stylesheet" href="dis.css" />
+    <script src="dp.js" defer></script>
+</head>
+<body>
+    <h2 align="center">Disease Predictor</h2>
+    <form align="center" id="diseaseForm">
+        <label for="fatherDisease">Disease from Father:</label>
+        <select id="fatherDisease" name="fatherDisease">
+            <option value="">Select an option</option>
+            <option value="cancer">Cancer</option>
+            <option value="pneumonia">Pneumonia</option>
+        </select><br><br>
+
+        <div id="fatherQuestions" style="display:none;">
+            <h3>Have you experienced symptoms related to this disease?</h3>
+            <button type="button" class="yes" id="fatherYes">Yes</button>
+            <button type="button" class="no" id="fatherNo">No</button>
+        </div>
+
+        <label for="grandfatherDisease">Disease from Grandfather:</label>
+        <select id="grandfatherDisease" name="grandfatherDisease">
+            <option value="">Select an option</option>
+            <option value="cancer">Cancer</option>
+            <option value="pneumonia">Pneumonia</option>
+        </select><br><br>
+
+        <div id="grandfatherQuestions" style="display:none;">
+            <h3>Have you experienced symptoms related to this disease?</h3>
+            <button type="button" class="yes" id="grandfatherYes">Yes</button>
+            <button type="button" class="no" id="grandfatherNo">No</button>
+        </div>
+
+        <h3>If you get prediction even after clicking of no in the questions <br><br>
+		then it is the chance of you inheriting the disease through genetics</h3>
+    </form>
+    <div id="output"></div>
+    <h2 align="center"><a href="dd.html">For more details about disease go to Diseases Details</a></h2>
+    <h1 align="center">Note: This is not accurate</h1>
+</body>
+</html>

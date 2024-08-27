@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Medicine Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .medicine-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .medicine-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+        .medicine-info {
+            margin-bottom: 10px;
+        }
+        .medicine-card img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #cart {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .quantity-button {
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Medicine Store</h1>
+
+    <div class="medicine-container">
+        <div class="medicine-card">
+            <h2>Paracetamol</h2>
+            <img src="https://brennanspharmacy.com/wp-content/uploads/2020/08/b0b158e8-b6a6-4dd9-b32a-d0f828e88bc1__96375.1473853752.jpg" alt="Paracetamol" /><br>
+            <div class="medicine-info">Price: ₹5</div>
+            <button class="quantity-button" onclick="changeQuantity('Paracetamol', 5, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Paracetamol', 5, -1)">-</button>
+            <span id="paracetamol-quantity">0</span>
+        </div>
+
+        <div class="medicine-card">
+            <h2>Ibuprofen</h2>
+            <img src="https://images.heb.com/is/image/HEBGrocery/002045366" alt="Ibuprofen" /><br>
+            <div class="medicine-info">Price: ₹10</div>
+            <button class="quantity-button" onclick="changeQuantity('Ibuprofen', 10, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Ibuprofen', 10, -1)">-</button>
+            <span id="ibuprofen-quantity">0</span>
+        </div>
+    </div>
+
+    <div class="medicine-container">
+        <div class="medicine-card">
+            <h2>Aspirin</h2>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.d-SVMaq7QzEUdfyueRqxZAHaHa&pid=Api&P=0&h=180" alt="Aspirin" /><br>
+            <div class="medicine-info">Price: ₹8</div>
+            <button class="quantity-button" onclick="changeQuantity('Aspirin', 8, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Aspirin', 8, -1)">-</button>
+            <span id="aspirin-quantity">0</span>
+        </div>
+
+        <div class="medicine-card">
+            <h2>Amoxicillin</h2>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.u8uvdj07CG0AhiDzFJs3HAHaFZ&pid=Api&P=0&h=180" alt="Amoxicillin" /><br>
+            <div class="medicine-info">Price: ₹12</div>
+            <button class="quantity-button" onclick="changeQuantity('Amoxicillin', 12, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Amoxicillin', 12, -1)">-</button>
+            <span id="amoxicillin-quantity">0</span>
+        </div>
+    </div>
+
+    <div class="medicine-container">
+        <div class="medicine-card">
+            <h2>Metformin</h2>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.ox1CRRLsAqgNT81WX20kMgHaHa&pid=Api&P=0&h=180" alt="Metformin" /><br>
+            <div class="medicine-info">Price: ₹15</div>
+            <button class="quantity-button" onclick="changeQuantity('Metformin', 15, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Metformin', 15, -1)">-</button>
+            <span id="metformin-quantity">0</span>
+        </div>
+
+        <div class="medicine-card">
+            <h2>Simvastatin</h2>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.CQnJKpNWCaIJkM6oA2Fg2gHaFH&pid=Api&P=0&h=180" alt="Simvastatin" /><br>
+            <div class="medicine-info">Price: ₹20</div>
+            <button class="quantity-button" onclick="changeQuantity('Simvastatin', 20, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Simvastatin', 20, -1)">-</button>
+            <span id="simvastatin-quantity">0</span>
+        </div>
+    </div>
+
+    <div class="medicine-container">
+        <div class="medicine-card">
+            <h2>Atorvastatin</h2>
+            <img src="https://tse4.mm.bing.net/th?id=OIP.A3rw7CyyktJqxp7ulP9HEgHaDt&pid=Api&P=0&h=180" alt="Atorvastatin" /><br>
+            <div class="medicine-info">Price: ₹22</div>
+            <button class="quantity-button" onclick="changeQuantity('Atorvastatin', 22, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Atorvastatin', 22, -1)">-</button>
+            <span id="atorvastatin-quantity">0</span>
+        </div>
+
+        <div class="medicine-card">
+            <h2>Lisinopril</h2>
+            <img src="https://static.shop-apotheke.com/images/lisinopril-10-1a-pharma-tabletten-tabletten-D03061918-p10.jpg" alt="Lisinopril" /><br>
+            <div class="medicine-info">Price: ₹18</div>
+            <button class="quantity-button" onclick="changeQuantity('Lisinopril', 18, 1)">+</button>
+            <button class="quantity-button" onclick="changeQuantity('Lisinopril', 18, -1)">-</button>
+            <span id="lisinopril-quantity">0</span>
+        </div>
+    </div>
+
+    <div class="medicine-container">
+       <div class="medicine-card">
+        <h2>Levothyroxine</h2>
+        <img src="https://tse3.mm.bing.net/th?id=OIP.ceWH-Dcrow41HDmf02tfgQHaDt&pid=Api&P=0&h=180" alt="Levothyroxine" /><br>
+        <div class="medicine-info">Price: ₹23</div>
+        <button class="quantity-button" onclick="changeQuantity('Levothyroxine', 23, 1)">+</button>
+        <button class="quantity-button" onclick="changeQuantity('Levothyroxine', 23, -1)">-</button>
+        <span id="levothyroxine-quantity">0</span>
+    </div>
+
+    <div class="medicine-card">
+        <h2>Hydrochlorothiazide</h2>
+        <img src="https://tse3.mm.bing.net/th?id=OIP.jEfCtgroZu9D-uDi3LSlWAHaGa&pid=Api&P=0&h=180" alt="Hydrochlorothiazide" /><br>
+        <div class="medicine-info">Price: ₹19</div>
+        <button class="quantity-button" onclick="changeQuantity('Hydrochlorothiazide', 19, 1)">+</button>
+        <button class="quantity-button" onclick="changeQuantity('Hydrochlorothiazide', 19, -1)">-</button>
+        <span id="hydrochlorothiazide-quantity">0</span>
+    </div>
+    </div>
+
+    
+	<div id="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items"></ul>
+    <div><strong>Total: ₹<span id="total">0</span></strong></div>
+    <button onclick="checkout()">Checkout</button>
+</div>
+
+    <script>
+        let cart = {};
+
+        function changeQuantity(medicine, price, change) {
+            if (!cart[medicine]) {
+                cart[medicine] = { quantity: 0, price: price };
+            }
+            cart[medicine].quantity += change;
+            if (cart[medicine].quantity < 0) {
+                cart[medicine].quantity = 0;
+            }
+
+            document.getElementById(`${medicine.toLowerCase()}-quantity`).textContent = cart[medicine].quantity;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = "";
+
+            let total = 0;
+            for (const [medicine, { quantity, price }] of Object.entries(cart)) {
+                if (quantity > 0) {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${medicine}: ₹${price} x ${quantity} = ₹${price * quantity}`;
+                    cartItems.appendChild(listItem);
+                    total += price * quantity;
+                }
+            }
+            document.getElementById("total").textContent = total;
+        }
+		 function checkout() {
+        alert('Thank you for your purchase! Your total is ₹' + document.getElementById("total").textContent);
+    }
+    </script>
+</body>
+</html>
